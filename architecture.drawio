@@ -1,0 +1,81 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="Architecture" id="chat-with-csv-arch">
+    <mxGraphModel dx="1521" dy="919" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fillColor=none;strokeColor=none;" value="Architecture: Chat with Your CSV" vertex="1">
+          <mxGeometry height="30" width="500" x="350" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=none;strokeColor=none;fontColor=#666666;" value="Streamlit · OpenAI · Plotly · deployed to Streamlit Community Cloud" vertex="1">
+          <mxGeometry height="20" width="600" x="300" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=14;fontStyle=1;strokeWidth=2;" value="👤 User · Browser" vertex="1">
+          <mxGeometry height="50" width="180" x="510" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=12;fontStyle=1;strokeWidth=2;" value="🔒 Password Gate&#xa;optional · APP_PASSWORD via st.secrets" vertex="1">
+          <mxGeometry height="60" width="340" x="430" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="streamlit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5f5;strokeColor=#ef4444;fontSize=14;fontStyle=1;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;" value="Streamlit App  ·  app.py" vertex="1">
+          <mxGeometry height="320" width="1080" x="60" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sidebar" parent="streamlit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#fb923c;fontSize=12;fontStyle=1;strokeWidth=1;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;" value="Sidebar&#xa;&#xa;📄 CSV file upload&#xa;🚖 Sample data button&#xa;🤖 Model selector&#xa;💰 Token / cost meter&#xa;🗑️ Clear chat history&#xa;🚪 Sign out (when gated)" vertex="1">
+          <mxGeometry height="265" width="290" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="maincanvas" parent="streamlit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a855f7;fontSize=12;fontStyle=1;strokeWidth=1;align=center;verticalAlign=top;spacingTop=10;" value="Main Canvas" vertex="1">
+          <mxGeometry height="265" width="735" x="325" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="metric_rows" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#c084fc;fontSize=11;fontStyle=1;" value="Rows" vertex="1">
+          <mxGeometry height="36" width="170" x="15" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="metric_cols" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#c084fc;fontSize=11;fontStyle=1;" value="Columns" vertex="1">
+          <mxGeometry height="36" width="170" x="195" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="metric_numeric" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#c084fc;fontSize=11;fontStyle=1;" value="Numeric cols" vertex="1">
+          <mxGeometry height="36" width="170" x="375" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="metric_missing" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#c084fc;fontSize=11;fontStyle=1;" value="Missing %" vertex="1">
+          <mxGeometry height="36" width="170" x="555" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_chat" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontStyle=1;" value="💬 Chat&#xa;&#xa;• starter chips&#xa;• st.chat_message&#xa;• st.write_stream&#xa;• history in&#xa;  session_state" vertex="1">
+          <mxGeometry height="135" width="232" x="15" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_data" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontStyle=1;" value="📋 Data Overview&#xa;&#xa;• sample rows (head)&#xa;• column profile&#xa;  (types · nulls · unique)&#xa;• numeric describe()" vertex="1">
+          <mxGeometry height="135" width="232" x="255" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tab_viz" parent="maincanvas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontStyle=1;" value="📊 Visualize&#xa;&#xa;• Plotly histograms&#xa;  (numeric columns)&#xa;• Plotly bar charts&#xa;  (categorical counts)&#xa;• column multiselect" vertex="1">
+          <mxGeometry height="135" width="232" x="495" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="llm_utils" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#7c3aed;fontSize=14;fontStyle=1;strokeWidth=2;align=left;verticalAlign=top;spacingLeft=15;spacingTop=10;" value="llm_utils.py" vertex="1">
+          <mxGeometry height="120" width="1080" x="60" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="build_ctx" parent="llm_utils" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a855f7;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" value="build_data_context(df)&#xa;df.describe + dtypes + samples + missing&#xa;→ compact text summary the LLM reads" vertex="1">
+          <mxGeometry height="65" width="450" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ask_llm" parent="llm_utils" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#a855f7;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" value="ask_llm_stream(...)&#xa;yields streaming chunks · captures token usage&#xa;stream_options={&quot;include_usage&quot;: True}" vertex="1">
+          <mxGeometry height="65" width="450" x="590" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="openai" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#059669;fontSize=14;fontStyle=1;strokeWidth=2;" value="🌐 OpenAI API&#xa;chat completions · gpt-4o-mini · gpt-4o" vertex="1">
+          <mxGeometry height="60" width="340" x="430" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_gate" edge="1" parent="1" source="user" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_streamlit" edge="1" parent="1" source="gate" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="streamlit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_streamlit_llm" edge="1" parent="1" source="streamlit" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="llm_utils" value="DataFrame · question · history · model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_llm_openai" edge="1" parent="1" source="llm_utils" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;fontSize=11;exitX=0.45;exitY=1;exitDx=0;exitDy=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;" target="openai" value="prompt + messages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_openai_llm" edge="1" parent="1" source="openai" style="endArrow=classic;html=1;rounded=0;strokeColor=#10a37f;strokeWidth=2;fontSize=11;exitX=0.6;exitY=0;exitDx=0;exitDy=0;entryX=0.55;entryY=1;entryDx=0;entryDy=0;" target="llm_utils" value="streamed chunks · token usage">
+          <mxGeometry relative="1" x="0.26" y="-56" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,85 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="Horizons" id="lecture34-horizons">
+    <mxGraphModel dx="3493" dy="1240" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;fillColor=none;strokeColor=none;" value="Where to go next" vertex="1">
+          <mxGeometry height="32" width="500" x="350" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fillColor=none;strokeColor=none;fontColor=#666666;" value="Three horizons beyond Chat with Your CSV  ·  Lecture 34" vertex="1">
+          <mxGeometry height="20" width="600" x="300" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="foundation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#059669;fontSize=13;fontStyle=1;strokeWidth=2;align=center;verticalAlign=middle;spacingTop=8;" value="✅  Where you are now&#xa;&#xa;&lt;b&gt;Chat with Your CSV&lt;/b&gt;&#xa;streaming chat · metric dashboard · auto visualizations · password gate · deployed" vertex="1">
+          <mxGeometry height="95" width="560" x="320" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#a855f7;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="405" width="400" x="-110" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="h1_badge" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a855f7;strokeColor=#7c3aed;fontSize=20;fontStyle=1;fontColor=#ffffff;strokeWidth=2;" value="1" vertex="1">
+          <mxGeometry height="44" width="44" x="-95" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h1_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#581c87;" value="📚  RAG&#xa;&lt;i&gt;Retrieval Augmented Generation&lt;/i&gt;" vertex="1">
+          <mxGeometry height="44" width="240" x="-40" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h1_when" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;When you need it&lt;/b&gt;&#xa;When your data is long-form text, not tabular rows.&#xa;&lt;font color=&quot;#6b7280&quot;&gt;Docs, wikis, support tickets, articles, contracts, anything text-heavy.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="290" x="-95" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="h1_tools" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Tools to explore&lt;/b&gt;&#xa;•  LangChain&#xa;•  LlamaIndex&#xa;•  Chroma  ·  Weaviate&#xa;•  Pinecone  ·  pgvector" vertex="1">
+          <mxGeometry height="105" width="290" x="-95" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="h1_example" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Example use case&lt;/b&gt;&#xa;&lt;i&gt;&quot;Chat with my company&#39;s internal wiki&quot;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="290" x="-95" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="405" width="420" x="340" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="h2_badge" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d97706;strokeColor=#b45309;fontSize=20;fontStyle=1;fontColor=#ffffff;strokeWidth=2;" value="2" vertex="1">
+          <mxGeometry height="44" width="44" x="380" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h2_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#78350f;" value="⚡  Code Execution&#xa;&lt;i&gt;Sandboxed code for exact answers&lt;/i&gt;" vertex="1">
+          <mxGeometry height="44" width="240" x="435" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h2_when" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;When you need it&lt;/b&gt;&#xa;When users want real numbers, not summaries.&#xa;&lt;font color=&quot;#6b7280&quot;&gt;Top-N rows, exact aggregates, computed values, joins, plots.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="290" x="380" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="h2_tools" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Tools to explore&lt;/b&gt;&#xa;•  OpenAI Code Interpreter&#xa;•  E2B  ·  Riza&#xa;•  Modal  ·  Daytona&#xa;•  custom Python sandbox" vertex="1">
+          <mxGeometry height="105" width="290" x="380" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="h2_example" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Example use case&lt;/b&gt;&#xa;&lt;i&gt;&quot;Show me the 10 trips with the highest fares&quot;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="290" x="380" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="h3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#ef4444;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="395" width="405" x="795" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="h3_badge" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ef4444;strokeColor=#b91c1c;fontSize=20;fontStyle=1;fontColor=#ffffff;strokeWidth=2;" value="3" vertex="1">
+          <mxGeometry height="44" width="44" x="810" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h3_title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fillColor=none;strokeColor=none;fontColor=#7f1d1d;" value="🤖  Agents&#xa;&lt;i&gt;Model picks tools, chains calls&lt;/i&gt;" vertex="1">
+          <mxGeometry height="44" width="240" x="865" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="h3_when" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;When you need it&lt;/b&gt;&#xa;When you need multi-step workflows the model drives.&#xa;&lt;font color=&quot;#6b7280&quot;&gt;Querying DBs, calling APIs, sending emails, hitting webhooks.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="290" x="810" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="h3_tools" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Tools to explore&lt;/b&gt;&#xa;•  OpenAI Function Calling&#xa;•  Anthropic Agent SDK&#xa;•  LangChain Agents&#xa;•  CrewAI  ·  AutoGen" vertex="1">
+          <mxGeometry height="105" width="290" x="810" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="h3_example" parent="1" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;strokeColor=none;fontColor=#1f2937;spacingTop=4;" value="&lt;b&gt;Example use case&lt;/b&gt;&#xa;&lt;i&gt;&quot;Find low-tipping zones, generate a report, email it&quot;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="290" x="810" y="595" as="geometry" />
+        </mxCell>
+        <mxCell id="advice" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;fontSize=13;strokeWidth=2;align=center;verticalAlign=middle;spacingTop=10;" value="🚀  &lt;b&gt;One practical piece of advice&lt;/b&gt;&#xa;&#xa;Don&#39;t make an agent your first LLM app.&#xa;What you just built is already more useful than 80% of the &quot;AI tools&quot; people launch.&#xa;&#xa;&lt;b&gt;Ship it. Get real users. Real usage will tell you which horizon matters next.&lt;/b&gt;" vertex="1">
+          <mxGeometry height="155" width="1040" x="80" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="e_to_h1" edge="1" parent="1" source="foundation" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="h1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_to_h2" edge="1" parent="1" source="foundation" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="h2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_to_h3" edge="1" parent="1" source="foundation" style="endArrow=classic;html=1;rounded=0;strokeColor=#475569;strokeWidth=2;exitX=0.6;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="h3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

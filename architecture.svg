@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>Architecture: Chat with Your CSV</title>
+  <desc>Top-down architecture diagram. User and browser flow through an optional password gate into the Streamlit app, which contains a sidebar (uploads, model selector, usage meter) and a main canvas with metric cards plus three tabs (Chat, Data Overview, Visualize). The app calls llm_utils which talks to the OpenAI API and streams chunks plus token usage back.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10a37f"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="920" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="600" y="42" font-size="22" font-weight="700" text-anchor="middle" fill="#0f172a">
+    Architecture: Chat with Your CSV
+  </text>
+  <text x="600" y="64" font-size="13" text-anchor="middle" fill="#64748b">
+    Streamlit · OpenAI · Plotly · deployed to Streamlit Community Cloud
+  </text>
+
+  <!-- ============ User ============ -->
+  <g>
+    <rect x="510" y="92" width="180" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="600" y="122" font-size="14" font-weight="600" text-anchor="middle" fill="#1e3a8a">User · Browser</text>
+  </g>
+
+  <!-- arrow user -> gate -->
+  <path d="M 600 142 L 600 178" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ============ Password Gate ============ -->
+  <g>
+    <rect x="430" y="180" width="340" height="58" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="600" y="206" font-size="14" font-weight="600" text-anchor="middle" fill="#78350f">🔒  Password Gate</text>
+    <text x="600" y="225" font-size="11" text-anchor="middle" fill="#92400e">optional · APP_PASSWORD via st.secrets</text>
+  </g>
+
+  <!-- arrow gate -> streamlit -->
+  <path d="M 600 238 L 600 274" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ============ Streamlit App ============ -->
+  <g>
+    <rect x="60" y="278" width="1080" height="320" rx="10" fill="#fff5f5" stroke="#ef4444" stroke-width="2"/>
+    <text x="80" y="304" font-size="14" font-weight="700" fill="#991b1b">Streamlit App  ·  app.py</text>
+
+    <!-- Sidebar -->
+    <g>
+      <rect x="80" y="318" width="290" height="265" rx="6" fill="#ffffff" stroke="#fb923c" stroke-width="1.5"/>
+      <text x="225" y="340" font-size="13" font-weight="700" text-anchor="middle" fill="#7c2d12">Sidebar</text>
+      <line x1="100" y1="349" x2="350" y2="349" stroke="#fdba74" stroke-width="1"/>
+
+      <text x="100" y="372" font-size="12" fill="#1f2937">📄  CSV file upload</text>
+      <text x="100" y="395" font-size="12" fill="#1f2937">🚖  Sample data button</text>
+      <text x="100" y="418" font-size="12" fill="#1f2937">🤖  Model selector</text>
+      <text x="100" y="441" font-size="12" fill="#1f2937">💰  Token / cost meter</text>
+      <text x="100" y="464" font-size="12" fill="#1f2937">🗑️  Clear chat history</text>
+      <text x="100" y="487" font-size="12" fill="#1f2937">🚪  Sign out  (when gated)</text>
+
+      <text x="100" y="525" font-size="10" fill="#7c2d12" font-style="italic">CSV upload returns a</text>
+      <text x="100" y="540" font-size="10" fill="#7c2d12" font-style="italic">DataFrame, cached via</text>
+      <text x="100" y="555" font-size="10" fill="#7c2d12" font-style="italic">@st.cache_data so reruns</text>
+      <text x="100" y="570" font-size="10" fill="#7c2d12" font-style="italic">don't re-parse the file.</text>
+    </g>
+
+    <!-- Main Canvas -->
+    <g>
+      <rect x="385" y="318" width="755" height="265" rx="6" fill="#ffffff" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="762" y="340" font-size="13" font-weight="700" text-anchor="middle" fill="#581c87">Main Canvas</text>
+      <line x1="405" y1="349" x2="1120" y2="349" stroke="#c084fc" stroke-width="1"/>
+
+      <!-- Metric cards row -->
+      <text x="405" y="368" font-size="10" font-weight="600" fill="#6b7280">Top: 4 metric cards (data-agnostic)</text>
+      <g>
+        <rect x="405" y="375" width="170" height="36" rx="4" fill="#f3e8ff" stroke="#c084fc" stroke-width="1"/>
+        <text x="490" y="397" font-size="11" font-weight="600" text-anchor="middle" fill="#581c87">Rows</text>
+      </g>
+      <g>
+        <rect x="585" y="375" width="170" height="36" rx="4" fill="#f3e8ff" stroke="#c084fc" stroke-width="1"/>
+        <text x="670" y="397" font-size="11" font-weight="600" text-anchor="middle" fill="#581c87">Columns</text>
+      </g>
+      <g>
+        <rect x="765" y="375" width="170" height="36" rx="4" fill="#f3e8ff" stroke="#c084fc" stroke-width="1"/>
+        <text x="850" y="397" font-size="11" font-weight="600" text-anchor="middle" fill="#581c87">Numeric cols</text>
+      </g>
+      <g>
+        <rect x="945" y="375" width="175" height="36" rx="4" fill="#f3e8ff" stroke="#c084fc" stroke-width="1"/>
+        <text x="1032" y="397" font-size="11" font-weight="600" text-anchor="middle" fill="#581c87">Missing %</text>
+      </g>
+
+      <!-- Tabs row -->
+      <text x="405" y="437" font-size="10" font-weight="600" fill="#6b7280">Then: 3 tabs (st.tabs)</text>
+      <g>
+        <rect x="405" y="445" width="232" height="130" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+        <text x="521" y="468" font-size="12" font-weight="700" text-anchor="middle" fill="#14532d">💬  Chat</text>
+        <text x="418" y="488" font-size="10" fill="#15803d">• starter chips (empty state)</text>
+        <text x="418" y="504" font-size="10" fill="#15803d">• st.chat_message / chat_input</text>
+        <text x="418" y="520" font-size="10" fill="#15803d">• streamed replies via</text>
+        <text x="418" y="534" font-size="10" fill="#15803d">  st.write_stream</text>
+        <text x="418" y="554" font-size="10" fill="#15803d">• history in session_state</text>
+      </g>
+      <g>
+        <rect x="645" y="445" width="232" height="130" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+        <text x="761" y="468" font-size="12" font-weight="700" text-anchor="middle" fill="#14532d">📋  Data Overview</text>
+        <text x="658" y="488" font-size="10" fill="#15803d">• sample rows (df.head)</text>
+        <text x="658" y="504" font-size="10" fill="#15803d">• column profile table</text>
+        <text x="658" y="520" font-size="10" fill="#15803d">  (types · null · unique)</text>
+        <text x="658" y="540" font-size="10" fill="#15803d">• numeric statistics</text>
+        <text x="658" y="554" font-size="10" fill="#15803d">  (df.describe)</text>
+      </g>
+      <g>
+        <rect x="885" y="445" width="232" height="130" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+        <text x="1001" y="468" font-size="12" font-weight="700" text-anchor="middle" fill="#14532d">📊  Visualize</text>
+        <text x="898" y="488" font-size="10" fill="#15803d">• Plotly histograms</text>
+        <text x="898" y="504" font-size="10" fill="#15803d">  (numeric columns)</text>
+        <text x="898" y="524" font-size="10" fill="#15803d">• Plotly bar charts</text>
+        <text x="898" y="540" font-size="10" fill="#15803d">  (categorical counts)</text>
+        <text x="898" y="560" font-size="10" fill="#15803d">• column multiselect</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- arrow streamlit -> llm_utils -->
+  <path d="M 600 598 L 600 645" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="615" y="624" font-size="11" fill="#334155">DataFrame  ·  question  ·  history  ·  model</text>
+
+  <!-- ============ llm_utils ============ -->
+  <g>
+    <rect x="60" y="650" width="1080" height="120" rx="10" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="80" y="676" font-size="14" font-weight="700" fill="#5b21b6">llm_utils.py</text>
+
+    <g>
+      <rect x="100" y="690" width="450" height="65" rx="6" fill="#ffffff" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="325" y="713" font-size="13" font-weight="600" text-anchor="middle" fill="#581c87">build_data_context(df)</text>
+      <text x="325" y="731" font-size="10" text-anchor="middle" fill="#7c3aed">df.describe + dtypes + samples + missing values</text>
+      <text x="325" y="745" font-size="10" text-anchor="middle" fill="#7c3aed">→ compact text summary the LLM reads</text>
+    </g>
+
+    <g>
+      <rect x="650" y="690" width="450" height="65" rx="6" fill="#ffffff" stroke="#a855f7" stroke-width="1.5"/>
+      <text x="875" y="713" font-size="13" font-weight="600" text-anchor="middle" fill="#581c87">ask_llm_stream(...)</text>
+      <text x="875" y="731" font-size="10" text-anchor="middle" fill="#7c3aed">yields streaming chunks · fills usage_tracker</text>
+      <text x="875" y="745" font-size="10" text-anchor="middle" fill="#7c3aed">stream_options={"include_usage": True}</text>
+    </g>
+  </g>
+
+  <!-- arrows llm_utils <-> OpenAI -->
+  <g>
+    <!-- request arrow -->
+    <path d="M 560 770 L 560 820" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="430" y="797" font-size="11" font-weight="600" fill="#334155">prompt + messages</text>
+
+    <!-- response arrow -->
+    <path d="M 640 820 L 640 770" stroke="#10a37f" stroke-width="2" fill="none" marker-end="url(#arrow-back)"/>
+    <text x="655" y="797" font-size="11" font-weight="600" fill="#047857">streamed chunks · token usage</text>
+  </g>
+
+  <!-- ============ OpenAI ============ -->
+  <g>
+    <rect x="430" y="825" width="340" height="58" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+    <text x="600" y="851" font-size="14" font-weight="600" text-anchor="middle" fill="#064e3b">🌐  OpenAI API</text>
+    <text x="600" y="870" font-size="11" text-anchor="middle" fill="#047857">chat completions · gpt-4o-mini  ·  gpt-4o</text>
+  </g>
+
+  <!-- ============ Side notes ============ -->
+  <g>
+    <rect x="20" y="92" width="200" height="58" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="120" y="113" font-size="11" font-weight="600" text-anchor="middle" fill="#334155">External</text>
+    <text x="120" y="130" font-size="10" text-anchor="middle" fill="#64748b">User browses to the</text>
+    <text x="120" y="143" font-size="10" text-anchor="middle" fill="#64748b">Community Cloud URL</text>
+  </g>
+
+  <g>
+    <rect x="980" y="825" width="200" height="58" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,2"/>
+    <text x="1080" y="846" font-size="11" font-weight="600" text-anchor="middle" fill="#334155">External</text>
+    <text x="1080" y="863" font-size="10" text-anchor="middle" fill="#64748b">paid by your OpenAI</text>
+    <text x="1080" y="876" font-size="10" text-anchor="middle" fill="#64748b">account · spend cap!</text>
+  </g>
+
+</svg>
